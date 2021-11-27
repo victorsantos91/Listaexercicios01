@@ -6,11 +6,41 @@ namespace Exercicio04
     {
         public static void Main(string[] args)
         {
+//Console.WriteLine("Digite o salário que será reajustado:");
+//double salario = Convert.ToDouble(Console.ReadLine());            
+
+
+double salario = 0;
+bool digitacaoInvalida = true; 
+while (digitacaoInvalida)
+{
+    try 
+    {
 Console.WriteLine("Digite o salário que será reajustado:");
-double salario = Convert.ToDouble(Console.ReadLine());            
+ salario = Convert.ToDouble(Console.ReadLine());            
+if (salario>0)
+digitacaoInvalida= false;
+else 
+throw new Exception();
+
+
+    }
+    catch
+    {
+Console.Write("Valor de salário inválido ");
+    }
+}
+
+       
+        
+        
 double percentualReajuste = 0;
 double valorAumento = 0;
 double novoSalario = 0;
+
+
+
+
 
 if (salario<2800)
 {
